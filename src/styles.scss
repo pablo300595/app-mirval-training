@@ -1,1 +1,36 @@
+@import './mixins';
+
 /* You can add global styles to this file, and also import other style files */
+html {
+    @include basic-flex(column, center, center);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include basic-flex(column, center, center);
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto', sans-serif;
+}
+
+app-root {
+    @include init-width-height(100vw, 100vh);
+}
+
+app-login-page {
+    @include init-width-height(inherit, inherit);
+}
+
+// .login-page {}
+
+app-login-card {
+    @include init-width-height(inherit, inherit);
+    @include basic-flex(column, center, center);
+    background: linear-gradient(135deg, rgba(25, 23, 37, 0.2) 50%, transparent 0), linear-gradient(-135deg, rgba(25, 23, 37, 0.01) 50%, transparent 0);
+    background-color: rgba(73, 59, 152, 1.0);
+    background-size: 2em 2em;
+}
+
+// .login-card

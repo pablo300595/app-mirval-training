@@ -1,0 +1,6 @@
+@import './../mixins';
+
+.main-app {
+    @include basic-flex(column, center, center);
+    @include init-width-height(inherit, inherit);
+}

@@ -1,0 +1,37 @@
+<form class="login-card" [formGroup]="loginForm" (ngSubmit)="login()">
+    <!--Card Header-->
+    <div class="login-card__header">
+        <h1 class="main-title">Login</h1>
+    </div>
+
+    <!--Card Content-->
+    <div class="login-card__content">
+        
+        <div class="input-group">
+            <input id="email" type="email" placeholder="Email Address" formControlName="email">
+            <div class="invalid-container" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+                <p *ngIf="loginForm.get('email')?.hasError('required')" class="invalid">Email is required*</p>
+                <p *ngIf="loginForm.get('email')?.hasError('email')" class="invalid">Invalid email format*</p>
+            </div>
+        </div>
+        <div class="input-group">
+            <input id="password" type="password" placeholder="Password" formControlName="password">
+            <div class="invalid-container" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                <p *ngIf="loginForm.get('password')?.hasError('required')" class="invalid">Password is required*</p>
+            </div>
+        </div>
+        <div class="input-group">
+            <button class="btn-log" [disabled]="loginForm.invalid && loginForm.touched">Log in</button>
+        </div>
+        <div class="input-group">
+            <button type="button" class="btn-google" (click)="loginWithGoogle()">Login with Google</button>
+        </div>
+        <div class="input-group">
+            <p class="fg-password">forgot password?</p>
+        </div>
+        <div class="input-group">
+            <button type="button" class="btn-register" (click)="goToRegisterPage()">Register instead</button>
+        </div>
+
+    </div>
+</form>

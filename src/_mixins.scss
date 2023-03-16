@@ -1,0 +1,38 @@
+/**
+ * A mixin that sets the basic aspects of flex.
+ *
+ * @param {string} $flex-direction - column or row.
+ * @param {string} $justify-content - center.
+ * @param {string} $align-items - center.
+ */
+@mixin basic-flex($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+}
+
+@mixin init-width-height($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin set-fontweight-fontsize ($font-weight, $font-size) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+@mixin set-color-backgroundcolor ($color, $background-color) {
+    color: $color;
+    background-color: $background-color;
+}
+
+@mixin set-color-background ($color, $background) {
+    color: $color;
+    background: $background;
+}
+
+@mixin reset-magin-blocks() {
+    margin-block-end: 0em;
+    margin-block-start: 0em;
+}

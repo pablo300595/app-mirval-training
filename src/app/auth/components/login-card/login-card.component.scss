@@ -1,0 +1,114 @@
+@import './../../../../mixins';
+
+.invalid-container {
+    @include basic-flex(column, center, center);
+    width: 100%
+}
+
+.invalid {
+    @include basic-flex(column, center, center);
+    @include set-fontweight-fontsize(bold, 0.8em);
+    @include reset-magin-blocks();
+    color: red;
+    width: 100%
+}
+
+.main-title {
+    @include basic-flex(column, center, center);
+    @include set-fontweight-fontsize(bold, 1.5em);
+    @include reset-magin-blocks();
+    color: #efe2e2;
+    height: 100%;
+}
+
+button {
+    @include basic-flex(column, center, center);
+    @include init-width-height(80%, 2em);
+    @include set-fontweight-fontsize(bold, 1em);
+    border: 1px solid;
+    border-radius: 2em;
+    cursor: pointer;
+    outline: none;
+    padding: 1.5em;
+    transition: ease .2s;
+}
+
+button:hover {
+    @include set-color-background(#3F5EFB, transparent);
+    border: #3F5EFB 1px solid;
+}
+
+.btn-log {
+    @include set-color-background(#fff, red);
+}
+
+.btn-log:disabled {
+    @include set-color-background(#fff, red);
+    border: none;
+    cursor: default;
+    opacity: 0.4;
+}
+
+.btn-register {
+    border: 1px solid #000;
+}
+
+input {
+    border: none;
+    border-bottom: 0.1em solid #d1d1d1;
+    outline: none;
+    padding: 1em;
+    width: 80%;
+}
+
+input:hover, input:focus {
+    border-bottom: 1px solid #3F5EFB;
+}
+
+.fg-password {
+    color: #3F5EFB;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.fg-password:hover {
+    border-bottom: 0.1em solid #6a22df;
+}
+
+.login-card {
+    @include basic-flex(column, flex-start, center);
+    @include init-width-height(30%, 60%);
+    background-color: rgba($color: #efe2e2, $alpha: 1.0);
+    border-radius: 38px;
+
+    .login-card__header {
+        @include basic-flex(column, center, center);
+        @include init-width-height(100%, 10%);
+        background-color: black;
+    }
+
+    .login-card__content {
+        @include basic-flex(column, space-evenly, center);
+        @include init-width-height(100%, 90%);
+        background-color: rgb(255, 255, 255);
+
+        .input-group {
+            @include basic-flex(column, center, center);
+            @include init-width-height(100%, 2em);
+        }
+    }
+}
+
+// Media query for screens smaller than 768px (mobile devices)
+@media (max-width: 767px) {
+    .login-card {
+        @include init-width-height(90%, 60%);
+    }
+}
+
+// Media query for screens larger than or equal to 768px and smaller than 1024px (tablets)
+@media (min-width: 768px) and (max-width: 1023px) {
+    .login-card {
+        @include init-width-height(60%, 60%);
+    }
+  }
